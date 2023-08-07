@@ -22,16 +22,5 @@ __This guide is meant to provide a top-level *practical* guide to working with A
 [fMRI][/fMRI/README.md]  
 
 
-## Data Availability
-
-Access to ABCD Data is managed by the [NIMH Data Archive (NDA)](https://nda.nih.gov/abcd/). 
-
-### Fast-track Imaging Data
-Along with basic participant demographics, imaging data including structural MRI, diffusion MRI, resting state fMRI, and task fMRI is released monthly in the form of raw DICOM files. 
-
-### Minimally-processed Imaging Data
-
-
-
 
 
