@@ -9,6 +9,21 @@ Those tasks include:
 * Emotional N-Back Task (nBack) (Cohen et al., 2016b)
 
 
+## Data Availability
+
+Access to ABCD Data is managed by the [NIMH Data Archive (NDA)](https://nda.nih.gov/abcd/). 
+
+### Fast-track Imaging Data
+Along with basic participant demographics, imaging data including structural MRI, diffusion MRI, resting state fMRI, and task fMRI is released monthly in the form of raw DICOM files. 
+
+### Minimally-processed Imaging Data
+Raw imaging DICOM files are processed according to the steps described in Hagler et al. [2019](https://doi.org/10.1016/j.neuroimage.2019.116091). Functional preprocessing is described below.
+
+### Tabular fMRI Data
+Functional time-series images are pre-processed, sampled to the cortical surface, parcellated into regions of interest (ROI), and reported as estimates of activation strength using GLM Beta coefficients and standard errors. In most cases, these values are presented as fMRI subtraction-logic contrasts.
+
+
+
 ## fMRI processing (taken from Hagler et al. [2019](https://doi.org/10.1016/j.neuroimage.2019.116091))
 
 ### Preprocessing
@@ -39,4 +54,18 @@ Resulting images are in "native-space" with 2.4mm isotropic resolution
 * Hemodynamic response functions (HRFs) are modelled using a gamma variate basic function and its temporal derrivative. This is implemented in `abcd_hrf.py`
 
     <img src="./img/abcd_hrf.png" alt="ABCD HRF" width="400"/>
+
+* Instantaneous events (MID, SST) or blocks (nBack) are convolved with the above HRF.
+
+* GLMs are fit using for __each run__, obtaining a Beta coefficient and standard errors of the mean calculated from the ratio of Beta and the t-statistic __for each run__
+
+* Beta and standard errors are averaged across imaging runs, weighted by the nominal degrees of freedom for each model (i.e., the number of non-censored frames minus the number of model parameters)
+    * Runs with fewer than 50 degrees of fredom are excluded from the average between runs
+
+* For ROIs, task contrasts are computed using subtraction logic.
+
+* Censoring invalid contrasts:
+
+    > We censor the beta and SEM values for all ROIs for those contrasts that have RMS of SEM values across the cortical surface greater than 5% signal change. This represents less than 0.5% of all subject-task-contrast-run combinations. The censored values are replaced with empty cells.
+
 
