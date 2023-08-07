@@ -36,5 +36,7 @@ Resulting images are in "native-space" with 2.4mm isotropic resolution
 
 ### General linear model (GLM)
 * Task-related strength is estimated using a GLM at the individual subject level (implemented using AFNI's `3dDeconvolve`)
-* Hemodynamic response functions (HRFs) are modelled using a gamma variate basic function and its temporal derrivative.
-    * This is implemented in `abcd_hrf.py`
+* Hemodynamic response functions (HRFs) are modelled using a gamma variate basic function and its temporal derrivative. This is implemented in `abcd_hrf.py`
+
+    <img src="./img/abcd_hrf.png" alt="ABCD HRF" width="400"/>
+
