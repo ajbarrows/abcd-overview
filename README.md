@@ -19,7 +19,7 @@ __This guide is meant to provide a top-level *practical* guide to working with A
 
 
 
-[fMRI][/fMRI/README.md]  
+[fMRI][fMRI/README.md]  
 
 
 
