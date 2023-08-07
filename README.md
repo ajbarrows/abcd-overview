@@ -18,8 +18,10 @@ __This guide is meant to provide a top-level *practical* guide to working with A
 * [Public Release Notes](https://wiki.abcdstudy.org/release-notes/start-page.html)
 
 
+## Guides
 
-[fMRI][fMRI/README.md]  
+
+[fMRI](fMRI/README.md)
 
 
 
