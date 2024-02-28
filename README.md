@@ -21,7 +21,7 @@ __This guide is meant to provide a top-level *practical* guide to working with A
 ## Guides
 
 
-[Imaging](imagingREADME.md)
+[Imaging](imaging/)
 
 
 
