@@ -21,7 +21,7 @@ __This guide is meant to provide a top-level *practical* guide to working with A
 ## Guides
 
 
-[fMRI](fMRI/README.md)
+[Imaging](imagingREADME.md)
 
 
 
